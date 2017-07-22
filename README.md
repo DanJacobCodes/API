@@ -1,5 +1,7 @@
 # Epicodus Ruby on Rails Independent Project Week 4 || Building an API
 
+## Description
+The purpose of this project is to create an API using Rails that will test for endpoints such as GET,POST,PUT,and DELETE. The project relies on the Rails API Project setup, creating a model with scopes to filter requests, and testing the given routes to ensure endpoints work effectively.
 
 
 ## Prerequisites
@@ -7,13 +9,27 @@
 * Ruby/Rails
 * Postman
 
-## Description
-The purpose of this project is to create an API using Rails that will test for endpoints such as GET,POST,PUT,and DELETE. The project relies on the Rails API Project setup, creating a model with scopes to filter requests, and testing the given routes to ensure endpoints work effectively.
+
+## API Endpoints
+
+
+| Request        | Path           | Parameters  |
+| ------------- |:-------------:| -----:|
+| GET All   |  http://localhost:3000/businesses | $1600 |
+| GET By ID   | http://localhost:3000/businesses/:id    |   Business :id |
+| GET Random | http://localhost:3000/businesses?get_random=yes|    N/A |
+| GET Searched Business | http://localhost:3000/businesses?name=TABLE
+     |    Business Name Ex: TABLE |
+| PUT |  http://localhost:3000/businesses/:id      |   Business :id  |
+| POST |  http://localhost:3000/businesses      |    Enter Key/Value pair |
+| DELETE |  http://localhost:3000/businesses/:id      |    Business :id |
+
+
 
 ## Setup and Installation
 1. Clone this project into your Desktop directory
   ```
-  git clone https://github.com/DanJacobCodes/API
+  git clone https://github.com/DanJacobCodes/Business-Lookup-API
   ```
 2. In a separate terminal window launch postgres
 ```
@@ -27,7 +43,7 @@ postgres
   ```
 4. Change into this directory and create and initialize the database
   ```
-  cd API
+  cd Business-Lookup-API
   rake db:create
   rake db:migrate
   rake db:test:prepare
