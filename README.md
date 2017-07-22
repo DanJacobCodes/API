@@ -18,8 +18,7 @@ The purpose of this project is to create an API using Rails that will test for e
 | GET All   |  http://localhost:3000/businesses | $1600 |
 | GET By ID   | http://localhost:3000/businesses/:id    |   Business :id |
 | GET Random | http://localhost:3000/businesses?get_random=yes|    N/A |
-| GET Searched Business | http://localhost:3000/businesses?name=TABLE
-     |    Business Name Ex: TABLE |
+| GET Searched Business | http://localhost:3000/businesses?name=TABLE |    Business Name Ex: TABLE |
 | PUT |  http://localhost:3000/businesses/:id      |   Business :id  |
 | POST |  http://localhost:3000/businesses      |    Enter Key/Value pair |
 | DELETE |  http://localhost:3000/businesses/:id      |    Business :id |
@@ -46,6 +45,7 @@ postgres
   cd Business-Lookup-API
   rake db:create
   rake db:migrate
+  rake db:seed
   rake db:test:prepare
   ```
 
