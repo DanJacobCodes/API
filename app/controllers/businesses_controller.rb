@@ -11,25 +11,34 @@ class BusinessesController < ApplicationController
   end
 
   def create
-    @business = Business.create(business_params)
+    @business = Business.create!(business_params)
     json_response(@business)
   end
 
   def update
     @business = Business.find(params[:id])
-    @business.update(business_params)
+    if @business.update!(business_params)
+      render status: :ok, json: {
+        message: "Business Updated!"
+      }
+    end
   end
 
   def destroy
     @business = Business.find(params[:id])
-    @business.destroy
+    if @business.destroy!(business_params)
+      render status: :ok, json: {
+        message: "Business removed"
+      }
+    end
   end
 
   private
-  
-  def json_response(object)
-    render json: object, status: :ok
+
+  def json_response(object, status = :ok)
+    render json: object, status: status
   end
+
 
   def business_params
     params.permit(:name)
