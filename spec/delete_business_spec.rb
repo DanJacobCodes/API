@@ -1,8 +1,16 @@
+
 require 'rails_helper'
+describe 'deletes one business', :type=>:request do
+  before {
+    @business = FactoryGirl.create(:business)
+    delete '/businesss/'+@business.id.to_s
+  }
 
-describe "deletes a business route", :type => :request do
+  it 'returns delete confirmation' do
+    expect(JSON.parse(response.body)['message']).to eq("Business removed")
+  end
 
-  it 'returns a created status' do
-    expect(response).to have_http_status(200)
+  it 'returns status code 200' do
+    expect(response).to have_http_status(:success)
   end
 end
