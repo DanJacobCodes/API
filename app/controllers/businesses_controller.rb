@@ -1,9 +1,15 @@
 class BusinessesController < ApplicationController
 
   def index
-    name = params[:name]
+    if name = params[:name]
     @businesses = Business.search(params[:name])
     json_response(@businesses)
+  elsif params[:get_random]
+    binding.pry
+    @businesses = Business.get_random
+  else
+    @businesses = Business.all
+    end
   end
 
   def show
